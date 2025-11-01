@@ -12,6 +12,15 @@ This project implements an ETL (Extract, Transform, Load) pipeline for OMNICart,
 - Error handling and logging
 
 ## Pagination Strategy
+uses 2 variables called start and limit
+by default start is 0 while limit is gotten from the config file
+
+based on the values of start and limit
+the response from the api is spilced by the values
+where start indicates what part of the response json to start from.
+
+the sum of start and limit indicates the end position of the splice.
+
 
 ## Project Structure
 ```
@@ -64,10 +73,6 @@ Run tests using pytest:
 pytest tests/
 ```
 
-## Error Handling
-- The pipeline includes comprehensive error handling for API requests
-- All errors are logged with appropriate severity levels
-- Failed requests return None instead of raising exceptions
 
 ## Dependencies
 - requests
